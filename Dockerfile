@@ -10,6 +10,8 @@ RUN mkdir -p /usr/local/bin
 RUN curl https://storage.googleapis.com/git-repo-downloads/repo-1 > /usr/local/bin/repo
 RUN chmod a+x /usr/local/bin/repo
 
+RUN useradd yocto
+
 ENV LANG=en_US.UTF-8
 ENV PATH=/usr/local/bin:$PATH
 
