@@ -6,18 +6,9 @@ RUN apt-get install -y gawk wget git-core diffstat unzip texinfo gcc-multilib \
 		xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev \
 		pylint3 xterm locales locales-all curl
 
-RUN mkdir -p /home/yocto/bin
+RUN mkdir -p /usr/local/bin
 RUN curl https://storage.googleapis.com/git-repo-downloads/repo-1 > /home/yocto/bin/repo
-RUN chmod a+x /home/yocto/bin/repo
+RUN chmod a+x /usr/local/bin/repo
 
 ENV LANG=en_US.UTF-8
-ENV PATH=/home/yocto/bin:$PATH
-ENV HOME=/home/yocto
-
-RUN groupadd -g 1000 yocto
-RUN useradd -rm -d /home/yocto -g yocto -u 1000 -p yocto yocto
-RUN mkdir -p /home/yocto/projects
-RUN chown -R yocto:yocto /home/yocto
-
-USER yocto
-WORKDIR /home/yocto
+ENV PATH=/usr/local/bin:$PATH
