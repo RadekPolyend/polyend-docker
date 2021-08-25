@@ -15,6 +15,8 @@ ENV PATH=/home/yocto/bin:$PATH
 
 RUN groupadd -g 1000 yocto
 RUN useradd -rm -d /home/yocto -g yocto -u 1000 -p yocto yocto
+RUN mkdir -p /home/yocto/projects
+RUN chown yocto:yocto /home/yocto/projects
 
 USER yocto
 WORKDIR /home/yocto
