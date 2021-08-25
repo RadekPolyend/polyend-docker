@@ -12,6 +12,7 @@ RUN chmod a+x /home/yocto/bin/repo
 
 ENV LANG=en_US.UTF-8
 ENV PATH=/home/yocto/bin:$PATH
+ENV HOME=/home/yocto
 
 RUN groupadd -g 1000 yocto
 RUN useradd -rm -d /home/yocto -g yocto -u 1000 -p yocto yocto
