@@ -7,7 +7,7 @@ RUN apt-get install -y gawk wget git-core diffstat unzip texinfo gcc-multilib \
 		pylint3 xterm locales locales-all curl
 
 RUN mkdir -p /usr/local/bin
-RUN curl https://storage.googleapis.com/git-repo-downloads/repo-1 > /home/yocto/bin/repo
+RUN curl https://storage.googleapis.com/git-repo-downloads/repo-1 > /usr/local/bin/repo
 RUN chmod a+x /usr/local/bin/repo
 
 ENV LANG=en_US.UTF-8
