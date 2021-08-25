@@ -12,3 +12,5 @@ RUN chmod a+x /usr/local/bin/repo
 
 ENV LANG=en_US.UTF-8
 ENV PATH=/usr/local/bin:$PATH
+
+ENTRYPOINT ["/bin/bash"]
