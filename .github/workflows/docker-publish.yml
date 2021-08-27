@@ -62,9 +62,9 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           
-      - name: send dispatch
-        uses: peter-evans/repository-dispatch@v1
+      - name: Trigger polyend/meta-pro
+        uses: benc-uk/workflow-dispatch@v1
         with:
+          workflow: CI
           token: ${{ secrets.PAT }}
-          repository: polyend/meta-pro
-          event-type: RepoAevent
+          repo: polyend/meta-pro
