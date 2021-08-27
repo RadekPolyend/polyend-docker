@@ -61,9 +61,10 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-     - name: send dispatch
-       uses: peter-evans/repository-dispatch@v1
-       with:
+          
+      - name: send dispatch
+        uses: peter-evans/repository-dispatch@v1
+        with:
           token: ${{ secrets.PAT }}
           repository: polyend-meta-pro
           event-type: RepoAevent
