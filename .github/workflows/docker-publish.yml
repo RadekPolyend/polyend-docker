@@ -66,5 +66,5 @@ jobs:
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.PAT }}
-          repository: polyend-meta-pro
+          repository: polyend/meta-pro
           event-type: RepoAevent
