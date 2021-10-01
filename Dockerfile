@@ -17,12 +17,18 @@ RUN mkdir -p /usr/local/bin
 RUN curl https://storage.googleapis.com/git-repo-downloads/repo-1 > /usr/local/bin/repo
 RUN chmod a+x /usr/local/bin/repo
 
-RUN mkdir -p /root/.docker/cli-plugins
-RUN wget https://github.com/docker/buildx/releases/download/v0.6.3/buildx-v0.6.3.linux-amd64
-RUN mv buildx-v0.6.3.linux-amd64 /root/.docker/cli-plugins/docker-buildx
-RUN chmod a+x /root/.docker/cli-plugins/docker-buildx
-
 RUN useradd -m -s /bin/bash -G root -u 1000 yocto
+
+RUN mkdir -p /root/.docker/cli-plugins
+RUN mkdir -p /home/yocto/.docker/cli-plugins
+
+RUN wget https://github.com/docker/buildx/releases/download/v0.6.3/buildx-v0.6.3.linux-amd64
+
+RUN mv buildx-v0.6.3.linux-amd64 /root/.docker/cli-plugins/docker-buildx
+RUN mv buildx-v0.6.3.linux-amd64 /home/yocto/.docker/cli-plugins/docker-buildx
+
+RUN chmod a+x /root/.docker/cli-plugins/docker-buildx
+RUN chmod a+x /home/yocto/.docker/cli-plugins/docker-buildx
 
 ENV LANG=en_US.UTF-8
 ENV PATH=/usr/local/bin:$PATH
