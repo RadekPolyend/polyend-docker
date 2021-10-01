@@ -24,7 +24,7 @@ RUN mkdir -p /home/yocto/.docker/cli-plugins
 
 RUN wget https://github.com/docker/buildx/releases/download/v0.6.3/buildx-v0.6.3.linux-amd64
 
-RUN mv buildx-v0.6.3.linux-amd64 /root/.docker/cli-plugins/docker-buildx
+RUN cp buildx-v0.6.3.linux-amd64 /root/.docker/cli-plugins/docker-buildx
 RUN mv buildx-v0.6.3.linux-amd64 /home/yocto/.docker/cli-plugins/docker-buildx
 
 RUN chmod a+x /root/.docker/cli-plugins/docker-buildx
