@@ -33,4 +33,4 @@ RUN chmod a+x /home/yocto/.docker/cli-plugins/docker-buildx
 ENV LANG=en_US.UTF-8
 ENV PATH=/usr/local/bin:$PATH
 
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["/bin/bash","-l","-c"]
